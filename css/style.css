@@ -680,3 +680,56 @@ footer {
     40% { transform: translate(-50%, -10px);}
     60% { transform: translate(-50%, -5px);}
 }
+
+
+/* ==========================================================================
+   CODE SPÉCIFIQUE POUR LES ÉCRANS MOBILES (Moins de 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  
+  /* 1. Correction du Menu / Header (Évite que ce soit coupé à droite) */
+  nav, .navbar, header {
+    display: flex !important;
+    flex-direction: column !important; /* Aligne les liens du menu verticalement */
+    align-items: center !important;
+    text-align: center !important;
+    height: auto !important; /* Permet au menu de s'agrandir en hauteur */
+    padding: 15px 5px !important;
+  }
+
+  /* Force les liens du menu à espacer proprement */
+  nav a, .navbar a {
+    margin: 8px 0 !important;
+    display: inline-block !important;
+  }
+
+  /* 2. Correction du Footer / Pied de page (Évite que les textes se chevauchent) */
+  footer, .footer {
+    display: flex !important;
+    flex-direction: column !important; /* Aligne "RD CONGO" et "TechPro" l'un sous l'autre */
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    height: auto !important; /* Évite de bloquer la hauteur */
+    padding: 20px 10px !important;
+    gap: 12px !important; /* Crée un espace propre entre chaque ligne de texte */
+  }
+
+  /* Force les paragraphes ou textes du footer à prendre toute la largeur */
+  footer p, footer div, footer span {
+    width: 100% !important;
+    margin: 5px 0 !important;
+    position: static !important; /* Annule les positionnements bizarres */
+  }
+
+  /* 3. Sécurité pour les images et conteneurs généraux */
+  img {
+    max-width: 100% !important; /* Empêche les grandes images de dépasser de l'écran */
+    height: auto !important;
+  }
+
+  body, html {
+    overflow-x: hidden !important; /* Supprime la barre de défilement horizontale moche */
+    width: 100% !important;
+  }
+}
