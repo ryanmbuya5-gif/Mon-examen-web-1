@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPro - Entreprise Informatique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Tech<span>Pro</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="equipe.html">Équipe</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    
+<section class="hero">
+    <!-- Le fond est géré par le CSS -->
+    <div class="hero-content">
+        <h1 class="scroll-reveal">Bienvenue à TechPro</h1>
+        <p class="scroll-reveal" style="transition-delay: 0.2s;">
+            Nous transformons vos idées en solutions digitales performantes
+        </p>
+        <a href="services.html" class="btn-primary scroll-reveal" style="transition-delay: 0.4s;">
+            Découvrir nos services
+        </a>
+    </div>
+
+
+<div class="scroll-indicator">
+    <span>⬇️</span>
+</div>
+
+</section>
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <h2>Nos Réalisations</h2>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="carousel-item active">
+                    <img src="image/image1.webp" alt="Projet 1">
+                    <div class="carousel-caption">
+                        <h3>Application Mobile</h3>
+                        <p>Développement d'une application de gestion</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/image2.jpg" alt="Projet 2">
+                    <div class="carousel-caption">
+                        <h3>Site E-commerce</h3>
+                        <p>Plateforme de vente en ligne</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/image3.jpg" alt="Projet 3">
+                    <div class="carousel-caption">
+                        <h3>Logiciel ERP</h3>
+                        <p>Solution de gestion d'entreprise</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Pourquoi nous choisir ?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>Des solutions à la pointe de la technologie</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Sécurité</h3>
+                <p>Protection maximale de vos données</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Performance</h3>
+                <p>Des résultats rapides et efficaces</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-contenair">
+             <div class="footer-country">
+            <span>RD CONGO</span>
+        </div>
+
+            <div class="footer-logo">
+                <h3>TechPro</h3>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 TechPro - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
