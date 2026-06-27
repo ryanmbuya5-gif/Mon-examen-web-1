@@ -767,3 +767,28 @@ footer {
     transform: rotate(45deg) translate(-5px, -6px);
   }
 }
+
+
+
+/* Remplacement de la section footer dans ta media query existante */
+  footer, .footer {
+    display: flex !important;
+    flex-direction: column !important; /* Force l'empilement vertical obligatoire */
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    height: auto !important; /* Supprime toute restriction de hauteur */
+    min-height: 100px !important;
+    padding: 20px 15px !important;
+    gap: 10px !important; /* Ajoute un espace automatique de 10px entre chaque ligne */
+  }
+
+  /* Annulation complète des comportements de blocs internes */
+  footer p, footer div, footer span, .footer div, .footer p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: static !important; /* Désactive les positions absolues ou relatives gênantes */
+    margin: 5px 0 !important;
+    float: none !important; /* Élimine d'anciens comportements de flottement */
+  }
