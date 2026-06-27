@@ -682,54 +682,88 @@ footer {
 }
 
 
+
+
+/* Cache la case à cocher sur PC et Mobile */
+#burger-toggler {
+  display: none;
+}
+
 /* ==========================================================================
-   CODE SPÉCIFIQUE POUR LES ÉCRANS MOBILES (Moins de 768px)
+   VERSION MOBILE (Écrans de moins de 768px)
    ========================================================================== */
 @media (max-width: 768px) {
   
-  /* 1. Correction du Menu / Header (Évite que ce soit coupé à droite) */
-  nav, .navbar, header {
+  nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px !important;
+    z-index: 1000;
+  }
+
+  /* Rend le bouton burger visible et cliquable */
+  .burger {
+    display: block !important;
+    cursor: pointer;
+  }
+
+  /* Style de tes trois lignes du burger */
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* Change la couleur si ton fond est sombre */
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  /* Transformation de ta liste de liens en menu déroulant plein écran */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px); /* Prend tout l'écran sous le menu */
+    background-color: #1a1e29; /* Fond sombre comme FastBite */
     display: flex !important;
-    flex-direction: column !important; /* Aligne les liens du menu verticalement */
-    align-items: center !important;
-    text-align: center !important;
-    height: auto !important; /* Permet au menu de s'agrandir en hauteur */
-    padding: 15px 5px !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    /* Effet masqué par défaut */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
   }
 
-  /* Force les liens du menu à espacer proprement */
-  nav a, .navbar a {
-    margin: 8px 0 !important;
-    display: inline-block !important;
+  .nav-links li a {
+    color: #ffffff !important; /* Liens écrits en blanc */
+    font-size: 1.4rem;
+    text-decoration: none;
   }
 
-  /* 2. Correction du Footer / Pied de page (Évite que les textes se chevauchent) */
-  footer, .footer {
-    display: flex !important;
-    flex-direction: column !important; /* Aligne "RD CONGO" et "TechPro" l'un sous l'autre */
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    height: auto !important; /* Évite de bloquer la hauteur */
-    padding: 20px 10px !important;
-    gap: 12px !important; /* Crée un espace propre entre chaque ligne de texte */
+  /* ACTION : Quand on clique sur le burger, on affiche la liste .nav-links */
+  #burger-toggler:checked ~ .nav-links {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
-  /* Force les paragraphes ou textes du footer à prendre toute la largeur */
-  footer p, footer div, footer span {
-    width: 100% !important;
-    margin: 5px 0 !important;
-    position: static !important; /* Annule les positionnements bizarres */
+  /* ANIMATION : Transforme les 3 lignes en "X" quand le menu est ouvert */
+  #burger-toggler:checked + .burger .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
-
-  /* 3. Sécurité pour les images et conteneurs généraux */
-  img {
-    max-width: 100% !important; /* Empêche les grandes images de dépasser de l'écran */
-    height: auto !important;
+  #burger-toggler:checked + .burger .line2 {
+    opacity: 0;
   }
-
-  body, html {
-    overflow-x: hidden !important; /* Supprime la barre de défilement horizontale moche */
-    width: 100% !important;
+  #burger-toggler:checked + .burger .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 }
